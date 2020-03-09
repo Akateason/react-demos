@@ -10,13 +10,16 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-
-      var data = 123;
+      var data = "123aaa";
 
       class MyTitle extends React.Component {
+        static defaultProps = {
+          title: "hello 11"
+        };
+
         static propTypes = {
-          title: PropTypes.string.isRequired,
-        }
+          title: PropTypes.string.isRequired
+        };
         render() {
           return <h1> {this.props.title} </h1>;
         }
@@ -24,10 +27,8 @@
 
       ReactDOM.render(
         <MyTitle title={data} />,
-        document.getElementById('example')
+        document.getElementById("example")
       );
-
     </script>
   </body>
 </html>
-
